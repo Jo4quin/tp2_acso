@@ -1,0 +1,38 @@
+phase_1:
+Analisando el codigo veo que lo que hace es comparar dos cadenas de texto. Mi entrada y la entrada esperada.
+Si no son igualeses, el programa explota. Extraje esta cadena examinando el registro que contenía su dirección.
+
+phase_2:
+Necesitaba un número negativo para num3 para que no explote la función misterio y la operación XOR + shift de los num1 y num2 debe producir exactamente ese número.
+
+phase_3:
+Tenia que ingresar una palabra y un número, para que la función '__isoc99_sscanf' funcionara correctamente y pudiera procesar los valores(devolvia un int que usaba despues la funcion). 
+Ademas la palabra tenia que estar en 'palabras.txt'.
+Despues 'cuenta' realizaba una búsqueda binaria en la cual guardaba la suma del valor ascii del primer caracter de la palabra. 
+El número ingresado debía ser menor a 799 y coincidir exactamente con lo que devolvia 'cuenta' para que no explotara el programa.
+Entonces busque un valor en la lista de palabras que cumpliera con estas condiciones. Para eso utilice un codigo en python.
+El valor tenia q ser igual a lo q devolvia la funcion 'cuenta'.
+
+phase_4:
+
+(gdb) x/16xb 0x4cde50
+0x4cde50 <array.0>:     0x65    0x67    0x6d    0x63    0x66    0x61    0x69    0x6a
+0x4cde58 <array.0+8>:   0x6f    0x70    0x6e    0x68    0x64    0x62    0x6b    0x6c
+
+en decimal: 
+
+101 103 109 99  102 97  105 106
+111 112 110 104 100 98  107 108
+
+pasado de hexa a ascii:
+
+Índice: 0  1  2  3  4  5  6  7  8  9  a  b  c  d  e  f
+Valor:  e  g  m  c  f  a  i  j  o  p  n  h  d  b  k  l
+
+tenia que formar la palabra "enfoca"
+el programa usaba la parte baja de los numeros de entrada y con esa "traduccion" tenia que formar la palabra.
+
+ahora necesito que los bajos del input sean iguales a 0a4835
+el ascii del 0 = 48 lo cual su nibble es 0
+basicamente busco caracteres que cuando haga su numero ascii mod 16 = indice
+hay mas de una respuesta. yo elegi 0z4835
